@@ -482,7 +482,7 @@ class XMLSchemaParser(object):
         except KeyError:
             pass
         else:
-            return self.parse_element_with_simple_type(complexType, data_element)
+            return self.parse_element_with_simple_type(simpleType, data_element)
 
         raise NotImplementedError("%r" % ((type_namespace_uri, type_name),))
 
