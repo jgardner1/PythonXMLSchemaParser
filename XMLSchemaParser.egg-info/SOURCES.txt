@@ -1,0 +1,13 @@
+setup.cfg
+setup.py
+XMLSchemaParser.egg-info/PKG-INFO
+XMLSchemaParser.egg-info/SOURCES.txt
+XMLSchemaParser.egg-info/dependency_links.txt
+XMLSchemaParser.egg-info/entry_points.txt
+XMLSchemaParser.egg-info/top_level.txt
+XMLSchemaParser.egg-info/zip-safe
+xmlschemaparser/Document.py
+xmlschemaparser/Element.py
+xmlschemaparser/Parser.py
+xmlschemaparser/XMLSchemaParser.py
+xmlschemaparser/__init__.py
