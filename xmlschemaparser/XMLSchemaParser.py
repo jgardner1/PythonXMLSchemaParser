@@ -11,7 +11,6 @@ import decimal
 import re
 import base64
 
-
 def builtin_boolean(value):
     if value in (u'true', u'1'): return True
     elif value in (u'false', u'0'): return False
@@ -376,18 +375,22 @@ class XMLSchemaParser(object):
                     "not %d as expected." % (
                         expected_name, len(collected), minOccurs))
 
+            if maxOccurs is not None and len(collected) > maxOccurs:
+                raise ValueError(
+                    "Element %r occurred %d times, "
+                    "more than %d as expected." % (
+                        expected_name, len(collected), maxOccurs))
+
             # Don't bother storing empty collections
             if collected:
-                result.setdefault(expected_name, [])
-                result[expected_name].extend(collected)
+                if maxOccurs is None or maxOccurs > 1:
+                    result[expected_name] = collected
+                else:
+                    result[expected_name] = collected[0]
 
         if data_children:
             raise ValueError("Didn't match all the chidren")
 
-        for key, value in result.items():
-            if len(value) == 1:
-                result[key] = value[0]
-                
         return result
 
     def parse_simple_content(self, simpleContent, data_element):
