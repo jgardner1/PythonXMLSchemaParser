@@ -1,2 +1,5 @@
 *.pyc
 *.swp
+EGG-INFO
+*.egg-info
+setup.cfg
