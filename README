@@ -1,0 +1,7 @@
+A simple XML Schema parser.
+
+I wrote this for the AWSECommerceClient module.
+
+At one point, I thought I would need it for a website I was building.
+Eventually, I moved away from the Amazon product catalog, so I stopped using
+it.
